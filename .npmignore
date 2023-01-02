@@ -1,0 +1,6 @@
+# for me
+.env
+node_modules
+**/.*
+
+

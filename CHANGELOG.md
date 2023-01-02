@@ -1,0 +1,25 @@
+# (Mon Jan 02 2023)
+
+#### ⚠️ Pushed to `master`
+
+- ignore 수정, gh-pages 추가 (popping2606@gmail.com)
+- 기본 세팅 ([@imki123](https://github.com/imki123))
+- Initialize project using Create React App ([@imki123](https://github.com/imki123))
+
+#### Authors: 2
+
+- hoodie (popping2606@gmail.com)
+- Hoodie(Im Geeyoung) ([@imki123](https://github.com/imki123))
+
+---
+
+# (Mon Jan 02 2023)
+
+#### ⚠️ Pushed to `master`
+
+- 기본 세팅 ([@imki123](https://github.com/imki123))
+- Initialize project using Create React App ([@imki123](https://github.com/imki123))
+
+#### Authors: 1
+
+- Hoodie(Im Geeyoung) ([@imki123](https://github.com/imki123))
