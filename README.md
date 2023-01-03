@@ -14,5 +14,19 @@ npm i go-storybook
 
 ```
 npm run sb
-OR npm run storybook
+OR
+npm run storybook
+```
+
+## storybook 빌드/배포
+
+```
+npm run deploy
+```
+
+## npm 빌드/배포
+
+```
+npm run build-npm
+npm publish --otp=000000
 ```

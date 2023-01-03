@@ -1,9 +1,11 @@
 # npmignore
-.env
-node_modules
 **/.*
-src
-public
 .storybook
+/node_modules
+/public
+/src
+/storybook-static
+.env
+package-lock-json
 tsconfig.json
 
