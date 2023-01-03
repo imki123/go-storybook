@@ -1,6 +1,9 @@
-# for me
+# npmignore
 .env
 node_modules
 **/.*
-
+src
+public
+.storybook
+tsconfig.json
 
