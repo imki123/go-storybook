@@ -3,15 +3,16 @@ import { ReactNode } from 'react'
 
 export interface ButtonModel {
   children: ReactNode
+  background?: string
 }
 
-const Button = ({ children }: ButtonModel) => {
-  return <StyledButton>{children}</StyledButton>
+const Button = ({ children, background }: ButtonModel) => {
+  return <StyledButton background={background}>{children}</StyledButton>
 }
 
 export default Button
 
-const StyledButton = styled.button`
+const StyledButton = styled.button<{ background?: string }>`
   color: white;
   background: blue;
   border: 0;
@@ -25,4 +26,5 @@ const StyledButton = styled.button`
     opacity: 0.7;
     transform: scale(0.95);
   }
+  ${({ background }) => `background: ${background};`}
 `

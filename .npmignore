@@ -3,7 +3,6 @@
 .storybook
 /node_modules
 /public
-/src
 /storybook-static
 .env
 package-lock-json

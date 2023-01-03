@@ -10,3 +10,8 @@ export const Default = (args: ButtonModel) => <Button {...args} />
 Default.args = {
   children: 'Default',
 } as ButtonModel
+export const Red = (args: ButtonModel) => <Button {...args} />
+Red.args = {
+  children: 'Red',
+  background: 'red',
+} as ButtonModel
