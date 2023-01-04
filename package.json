@@ -10,12 +10,12 @@
     "presentor"
   ],
   "private": false,
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "browser": "./browser/specific/main.js",
   "homepage": "https://imki123.github.io/go-storybook/",
   "repository": "imki123/go-storybook",
   "author": "imki123 <popping2606@gmail.com>",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "browser": "./browser/specific/main.js",
   "auto": {
     "plugins": [
       "npm"
