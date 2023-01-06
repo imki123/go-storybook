@@ -23,10 +23,10 @@
     "onlyPublishWithReleaseLabel": true
   },
   "scripts": {
-    "sb": "npm run storybook",
+    "sb": "yarn storybook",
     "storybook": "start-storybook -p 6006 -s public",
     "build": "build-storybook -s public",
-    "deploy": "npm run build && gh-pages -d storybook-static",
+    "deploy": "yarn build && gh-pages -d storybook-static",
     "build-npm": "rm -rf dist && mkdir dist && tsc",
     "auto": "auto changelog"
   },
