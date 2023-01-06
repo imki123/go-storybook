@@ -1,18 +1,30 @@
 import styled from '@emotion/styled'
 import { ReactNode } from 'react'
 
+export const ButtonTypes = {
+  Primary: 'Primary',
+  Secondary: 'Secondary',
+} as const
+
 export interface ButtonModel {
+  buttonType: keyof typeof ButtonTypes
   children: ReactNode
-  background?: string
+  styles?: string
+  disabled?: boolean
 }
 
-const Button = ({ children, background }: ButtonModel) => {
-  return <StyledButton background={background}>{children}</StyledButton>
+const Button = ({ buttonType, children, styles, disabled }: ButtonModel) => {
+  return (
+    <StyledButton buttonType={buttonType} styles={styles} disabled={disabled}>
+      {children}
+    </StyledButton>
+  )
 }
 
 export default Button
 
-const StyledButton = styled.button<{ background?: string }>`
+const StyledButton = styled.button<ButtonModel>`
+  position: relative;
   color: white;
   background: blue;
   border: 0;
@@ -22,9 +34,24 @@ const StyledButton = styled.button<{ background?: string }>`
   height: 40px;
   padding: 0 16px;
   border-radius: 16px;
-  :active {
-    opacity: 0.7;
+  overflow: hidden;
+  :active:not(:disabled) {
     transform: scale(0.95);
+    :after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(128, 128, 128, 0.3);
+    }
   }
-  ${({ background }) => `background: ${background};`}
+  :disabled {
+    background: gray;
+    cursor: default;
+  }
+  ${({ buttonType }) =>
+    buttonType === 'Secondary' && `background: rgba(0,0,0,0.7);`}
+  ${({ styles }) => styles}
 `

@@ -1,17 +1,22 @@
 import Button, { ButtonModel } from './Button'
-import { Meta } from '@storybook/react'
+import { ComponentMeta } from '@storybook/react'
 
-export default {
-  title: 'Design System/Button',
+const Story: ComponentMeta<typeof Button> = {
+  title: 'Goyoung2 Design System/atom/Button',
   component: Button,
-} as Meta<ButtonModel>
+}
+export default Story
 
-export const Default = (args: ButtonModel) => <Button {...args} />
-Default.args = {
-  children: 'Default',
-} as ButtonModel
-export const Red = (args: ButtonModel) => <Button {...args} />
-Red.args = {
-  children: 'Red',
-  background: 'red',
-} as ButtonModel
+export const Primary = (args: ButtonModel) => <Button {...args} />
+const args: ButtonModel = {
+  buttonType: 'Primary',
+  children: 'Primary',
+}
+Primary.args = args
+
+export const Secondary = (args: ButtonModel) => <Button {...args} />
+const args2: ButtonModel = {
+  buttonType: 'Secondary',
+  children: 'Secondary',
+}
+Secondary.args = args2
