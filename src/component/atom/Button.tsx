@@ -13,9 +13,38 @@ export interface ButtonModel {
   disabled?: boolean
 }
 
+const delay = 500
+
 const Button = ({ buttonType, children, styles, disabled }: ButtonModel) => {
+  const makeRipple = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    const button = e.currentTarget
+    const width = button.clientWidth
+
+    const ripple = document.createElement('div')
+    ripple.style.cssText = `
+      position: absolute;
+      top: ${e.clientY - button.offsetTop - width}px;
+      left: ${e.clientX - button.offsetLeft - width}px;
+      width: ${width * 2}px;
+      height: ${width * 2}px;
+      border-radius: 100%;
+      background: rgba(255, 255, 255, 0.3);
+      animation: ripple ${delay}ms linear;
+    `
+    e.currentTarget.appendChild(ripple)
+
+    setTimeout(() => {
+      ripple.remove()
+    }, delay)
+  }
+
   return (
-    <StyledButton buttonType={buttonType} styles={styles} disabled={disabled}>
+    <StyledButton
+      buttonType={buttonType}
+      styles={styles}
+      disabled={disabled}
+      onClick={makeRipple}
+    >
       {children}
     </StyledButton>
   )
@@ -24,6 +53,15 @@ const Button = ({ buttonType, children, styles, disabled }: ButtonModel) => {
 export default Button
 
 const StyledButton = styled.button<ButtonModel>`
+  @keyframes ripple {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
   position: relative;
   color: white;
   background: blue;
@@ -37,15 +75,6 @@ const StyledButton = styled.button<ButtonModel>`
   overflow: hidden;
   :active:not(:disabled) {
     transform: scale(0.95);
-    :after {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: rgba(128, 128, 128, 0.3);
-    }
   }
   :disabled {
     background: gray;
