@@ -7,8 +7,8 @@ export const ButtonTypes = {
 } as const
 
 export interface ButtonModel {
-  buttonType: keyof typeof ButtonTypes
   children: ReactNode
+  buttonType?: keyof typeof ButtonTypes
   cssText?: string
   disabled?: boolean
   onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
