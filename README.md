@@ -43,6 +43,7 @@ yarn deploy
 ## npm 빌드/배포
 
 ```
+npm version patch
 yarn build-npm
 npm publish --otp=000000
 ```

@@ -9,13 +9,20 @@ export const ButtonTypes = {
 export interface ButtonModel {
   buttonType: keyof typeof ButtonTypes
   children: ReactNode
-  styles?: string
+  cssText?: string
   disabled?: boolean
+  onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
 }
 
 const delay = 500
 
-const Button = ({ buttonType, children, styles, disabled }: ButtonModel) => {
+const Button = ({
+  buttonType,
+  children,
+  cssText,
+  disabled,
+  onClick,
+}: ButtonModel) => {
   const makeRipple = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     const button = e.currentTarget
     const width = button.clientWidth
@@ -41,9 +48,12 @@ const Button = ({ buttonType, children, styles, disabled }: ButtonModel) => {
   return (
     <StyledButton
       buttonType={buttonType}
-      styles={styles}
+      cssText={cssText}
       disabled={disabled}
-      onClick={makeRipple}
+      onClick={(e) => {
+        makeRipple(e)
+        onClick?.(e)
+      }}
     >
       {children}
     </StyledButton>
@@ -82,5 +92,5 @@ const StyledButton = styled.button<ButtonModel>`
   }
   ${({ buttonType }) =>
     buttonType === 'Secondary' && `background: rgba(0,0,0,0.7);`}
-  ${({ styles }) => styles}
+  ${({ cssText }) => cssText}
 `
