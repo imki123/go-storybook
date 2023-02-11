@@ -34,16 +34,16 @@ import { Button } from 'go-storybook'
 yarn sb
 ```
 
-## storybook git 배포(자동빌드)
-
-```
-yarn deploy
-```
-
 ## npm 빌드/배포
 
 ```
 npm version patch
 yarn build-npm
 npm publish --otp=000000
+```
+
+## git 배포(자동빌드)
+
+```
+git push && yarn deploy
 ```
