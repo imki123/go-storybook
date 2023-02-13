@@ -27,7 +27,8 @@
     "build": "build-storybook -s public",
     "deploy": "yarn build && yarn gh-pages -d storybook-static",
     "build-npm": "rm -rf dist && mkdir dist && tsc",
-    "auto": "auto changelog"
+    "auto": "auto changelog",
+    "build-storybook": "build-storybook -s public"
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
@@ -47,21 +48,32 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^6.5.15",
-    "@storybook/addon-essentials": "^6.5.15",
-    "@storybook/addon-interactions": "^6.5.15",
-    "@storybook/addon-links": "^6.5.15",
-    "@storybook/builder-webpack5": "^6.5.15",
-    "@storybook/manager-webpack5": "^6.5.15",
-    "@storybook/node-logger": "^6.5.15",
+    "@mdx-js/react": "^1.6.22",
+    "@storybook/addon-actions": "^6.5.16",
+    "@storybook/addon-backgrounds": "^6.5.16",
+    "@storybook/addon-docs": "^6.5.16",
+    "@storybook/addon-essentials": "^6.5.16",
+    "@storybook/addon-interactions": "^6.5.16",
+    "@storybook/addon-links": "^6.5.16",
+    "@storybook/addon-measure": "^6.5.16",
+    "@storybook/addon-outline": "^6.5.16",
+    "@storybook/builder-vite": "^0.4.2",
+    "@storybook/builder-webpack5": "^6.5.16",
+    "@storybook/client-api": "^6.5.16",
+    "@storybook/client-logger": "^6.5.16",
+    "@storybook/manager-webpack5": "^6.5.16",
+    "@storybook/node-logger": "^6.5.16",
     "@storybook/preset-create-react-app": "^4.1.2",
-    "@storybook/react": "^6.5.15",
+    "@storybook/react": "^6.5.16",
     "@storybook/testing-library": "^0.0.13",
+    "@typescript-eslint/eslint-plugin": "^5.51.0",
     "@typescript-eslint/parser": "^5.51.0",
+    "@vitejs/plugin-react": "^3.1.0",
     "auto": "^10.37.6",
     "babel-plugin-named-exports-order": "^0.0.2",
     "eslint-config-react-app": "^6.0.0",
     "prop-types": "^15.8.1",
+    "vite": "^4.1.1",
     "webpack": "^5.75.0"
   },
   "eslintConfig": {
@@ -69,6 +81,30 @@
       "react-app"
     ],
     "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      },
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      },
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      },
       {
         "files": [
           "**/*.stories.*"
