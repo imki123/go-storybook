@@ -45,7 +45,7 @@ export const Component = () => {
 yarn
 ```
 
-If you have ts errors in IDE, check below yarn docs.
+If you have ts errors in IDE, check below yarn docs.  
 https://yarnpkg.com/getting-started/editor-sdks
 
 ## How to start storybook
@@ -59,7 +59,7 @@ yarn sb
 ```
 npm version patch
 yarn build-npm
-npm publish --otp=000000
+npm publish
 ```
 
 ## How to deploy git (auto build)
