@@ -1,6 +1,8 @@
 # npmignore
 **/.*
 .storybook
+/.vscode
+/.yarn
 /node_modules
 /public
 /src
@@ -8,4 +10,5 @@
 .env
 package-lock-json
 tsconfig.json
+
 

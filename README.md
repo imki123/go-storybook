@@ -1,40 +1,60 @@
 # go-storybook
 
-리액트 기반 스토리북이에요. npm에 배포되어 손쉽게 컴포넌트 활용할 수 있어요. 타입스크립트를 통해 컴포넌트 속성을 추론할 수 있어요.
-컴포넌트 UI를 스토리북을 통해 확인할 수 있어요.
+It's a React-based storybook. Deployed on npm, you can easily use the component. You can infer component properties through TypeScript.
+You can check the component UI through Storybook.
 https://imki123.github.io/go-storybook
 
-## 설치
-
-npm 또는 yarn을 사용해요.
+## How to install
 
 ```
-npm i go-storybook
-```
-
-OR
-
-```
+npm i -g yarn
 yarn add go-storybook
 ```
 
-## 사용 예시
+## Usage
+
+### Button
 
 ```
 import { Button } from 'go-storybook'
 
-<Button>버튼</Button>
+<Button>Click Me</Button>
+```
+
+### SnackBar
+
+```
+export const Component = () => {
+  const { openSnackBar } = useSnackBar({ text: 'My snackbar!!' })
+  return (
+    <>
+      <Button onClick={openSnackBar}>Open SnackBar</Button>
+      <SnackBar text='' />
+    </>
+  )
+}
 ```
 
 ---
 
-## storybook 실행
+# How to Start Project
+
+## How to install
+
+```
+yarn
+```
+
+If you have ts errors in IDE, check below yarn docs.
+https://yarnpkg.com/getting-started/editor-sdks
+
+## How to start storybook
 
 ```
 yarn sb
 ```
 
-## npm 빌드/배포
+## How to build/deploy npm
 
 ```
 npm version patch
@@ -42,7 +62,7 @@ yarn build-npm
 npm publish --otp=000000
 ```
 
-## git 배포(자동빌드)
+## How to deploy git (auto build)
 
 ```
 git push && yarn deploy

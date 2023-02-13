@@ -9,7 +9,6 @@
     "component",
     "presentor"
   ],
-  "private": false,
   "homepage": "https://imki123.github.io/go-storybook/",
   "repository": "imki123/go-storybook",
   "author": "imki123 <popping2606@gmail.com>",
@@ -90,5 +89,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "packageManager": "yarn@3.4.1"
 }
