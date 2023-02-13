@@ -57,15 +57,16 @@
     "@storybook/preset-create-react-app": "^4.1.2",
     "@storybook/react": "^6.5.15",
     "@storybook/testing-library": "^0.0.13",
+    "@typescript-eslint/parser": "^5.51.0",
     "auto": "^10.37.6",
     "babel-plugin-named-exports-order": "^0.0.2",
+    "eslint-config-react-app": "^6.0.0",
     "prop-types": "^15.8.1",
     "webpack": "^5.75.0"
   },
   "eslintConfig": {
     "extends": [
-      "react-app",
-      "react-app/jest"
+      "react-app"
     ],
     "overrides": [
       {
