@@ -83,6 +83,9 @@ const StyledButton = styled.button<ButtonModel>`
   padding: 0 16px;
   border-radius: 16px;
   overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+
   :active:not(:disabled) {
     transform: scale(0.95);
   }
